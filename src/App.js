@@ -1,5 +1,5 @@
 import './App.css';
-
+import React from 'react';
 import Expenses from './Components/Expenses';
 
 function App() {
@@ -32,9 +32,18 @@ function App() {
       amount:450,
       data:new Date(2021, 5, 12)}  
   ];
-  return (
-    <Expenses expenses={expenses}/>
+  return React.createElement(     //this is the alternative way for returning the tags below
+    'div',
+    {}, ///empty because it doesn't have attributes
+    React.createElement('h2',{},"Let's get started!"),
+    React.createElement(Expenses,{expenses:expenses})
   );
+  // return (
+  //   <div>
+  //   <h2>Let's get started!</h2>
+  //   <Expenses expenses={expenses}/>
+  //   </div>
+  // );
 }
 
 export default App;
