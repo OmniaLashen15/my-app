@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import Expenses from './Components/Expenses';
+import Expenses from './Components/Expenses/Expenses';
 
-function App() {
+const App = () => {
   ///imperative approach
   // const para = document.createElement("p");
   // para.textContent = "This is also visible";
@@ -32,18 +32,19 @@ function App() {
       amount:450,
       data:new Date(2021, 5, 12)}  
   ];
-  return React.createElement(     //this is the alternative way for returning the tags below
-    'div',
-    {}, ///empty because it doesn't have attributes
-    React.createElement('h2',{},"Let's get started!"),
-    React.createElement(Expenses,{expenses:expenses})
-  );
-  // return (
-  //   <div>
-  //   <h2>Let's get started!</h2>
-  //   <Expenses expenses={expenses}/>
-  //   </div>
+  // return React.createElement(     //this is the alternative way for returning the tags below,
+  //                                 //which is the under hood code which is created automatically when using jsx
+  //   'div',
+  //   {}, ///empty because it doesn't have attributes
+  //   React.createElement('h2',{},"Let's get started!"),
+  //   React.createElement(Expenses,{expenses:expenses})
   // );
+  return (
+    <div>
+    <h2>Let's get started!</h2>
+    <Expenses expenses={expenses}/>
+    </div>
+  );
 }
 
 export default App;
