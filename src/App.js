@@ -1,12 +1,14 @@
 import './App.css';
 import React from 'react';
 import Expenses from './Components/Expenses/Expenses';
+import NewExpense from './Components/NewExpense/NewExpense';
 
 const App = () => {
   ///imperative approach
   // const para = document.createElement("p");
   // para.textContent = "This is also visible";
   // document.getElementById('root').append(para);
+  
   const expenses = [
     {
       id:'e1',
@@ -41,8 +43,8 @@ const App = () => {
   // );
   return (
     <div>
-    <h2>Let's get started!</h2>
-    <Expenses expenses={expenses}/>
+  <NewExpense/>   
+ <Expenses expenses={expenses}/>
     </div>
   );
 }
