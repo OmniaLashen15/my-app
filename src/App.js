@@ -8,7 +8,11 @@ const App = () => {
   // const para = document.createElement("p");
   // para.textContent = "This is also visible";
   // document.getElementById('root').append(para);
-  
+
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense)
+  }
   const expenses = [
     {
       id:'e1',
@@ -43,8 +47,8 @@ const App = () => {
   // );
   return (
     <div>
-  <NewExpense/>   
- <Expenses expenses={expenses}/>
+      <NewExpense onAddExpense={addExpenseHandler}/>   
+      <Expenses expenses={expenses}/>
     </div>
   );
 }
